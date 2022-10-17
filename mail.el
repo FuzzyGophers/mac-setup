@@ -1,5 +1,6 @@
 (setq
- mue4e-headers-skip-duplicates  t
+ mu4e-headers-results-limit 2000
+ mu4e-headers-skip-duplicates  t
  mu4e-view-show-images t
  mu4e-view-show-addresses t
  mu4e-compose-format-flowed nil
