@@ -73,7 +73,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; mail config
-(load "~/.emacs.d/mail.el")
+;; (load "~/.emacs.d/mail.el")
 
 ;; go config
 (load "~/.emacs.d/go.el")
@@ -85,9 +85,27 @@
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
 
+;; sidebar
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+
+:config
+
+(push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+(push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+
+(setq dired-sidebar-subtree-line-prefix "__")
+(setq dired-sidebar-theme 'vscode)
+(setq dired-sidebar-use-term-integration t)
+(setq dired-sidebar-use-custom-font t))
+
+
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'tomorrow-night-paradise t)
+(load-theme 'dracula t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
