@@ -32,12 +32,11 @@
   fill-column 80
 )
 
-;; mac os setup for cmd key
-;;; I prefer cmd key for meta
-(setq mac-option-key-is-meta nil
-      mac-command-key-is-meta t
-      mac-command-modifier 'meta
-      mac-option-modifier 'none)
+;; mac os setup for opt key
+;; (setq mac-option-key-is-meta t
+;;      mac-command-key-is-meta nil
+;;      mac-command-modifier 'meta
+;;      mac-option-modifier 'none)
 
 (setq
  whitespace-style
