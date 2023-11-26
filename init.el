@@ -9,8 +9,8 @@
 (require 'use-package)
 
 ;; mail stuff
-(add-to-list 'load-path "/opt/homebrew/Cellar/mu/1.8.5/share/emacs/site-lisp/mu/mu4e/")
-(require 'mu4e)
+;; (add-to-list 'load-path "/opt/homebrew/Cellar/mu/1.8.5/share/emacs/site-lisp/mu/mu4e/")
+;; (require 'mu4e)
 
 ;; ensures that each package that is configured using ~use-package~ is installed
 (setq use-package-always-ensure t)
