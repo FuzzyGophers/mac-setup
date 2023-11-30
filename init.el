@@ -87,6 +87,9 @@
 ;; c config
 (load "~/.emacs.d/c.el")
 
+;; groovy
+(load "~/.emacs.d/groovy.el")
+
 ;; other languages
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
