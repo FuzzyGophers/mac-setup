@@ -28,5 +28,8 @@
 )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+;; format before saving
+(add-hook 'before-save-hook 'gofmt-before-save)
+
 (add-hook 'go-mode-hook (lambda ()
     (local-set-key (kbd "C-c i") 'go-goto-imports)))
