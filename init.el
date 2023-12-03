@@ -81,6 +81,9 @@
 ;; mail config
 ;; (load "~/.emacs.d/mail.el")
 
+;; general lsp config
+(load "~/.emacs.d/lsp.el")
+
 ;; go config
 (load "~/.emacs.d/go.el")
 
