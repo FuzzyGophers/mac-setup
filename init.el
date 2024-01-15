@@ -32,25 +32,25 @@
   fill-column 80
 )
 
-;; mac os setup for opt key
-;; (setq mac-option-key-is-meta t
-;;      mac-command-key-is-meta nil
-;;      mac-command-modifier 'meta
-;;      mac-option-modifier 'none)
+;; (setq
+;;  whitespace-style
+;; '(face
+;;   trailing
+;;  lines-tail
+;; space-before-tab
+;;   space-after-tab
+;;   newline
+;;   identation
+;;   empty
+;;   whitespace-line-column 80
+;;   )
+;; )
 
-(setq
- whitespace-style
- '(face
-   trailing
-   lines-tail
-   space-before-tab
-   space-after-tab
-   newline
-   identation
-   empty
-   whitespace-line-column 80
-   )
- )
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; wrap lines at 80 chars
 (add-hook 'text-mode-hook #'auto-fill-mode)
