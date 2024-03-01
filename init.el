@@ -30,7 +30,10 @@
   ;; The confirmation string when exiting Emacs
   confirm-kill-emacs 'y-or-n-p
   fill-column 80
-)
+  auto-fill-mode 1
+  )
+
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; (setq
 ;;  whitespace-style
@@ -51,9 +54,6 @@
 (setq whitespace-style '(face lines-tail))
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
-
-;; wrap lines at 80 chars
-(add-hook 'text-mode-hook #'auto-fill-mode)
 
 ;; properly delete tabs
 (setq backward-delete-char-untabify-method 'hungry)
