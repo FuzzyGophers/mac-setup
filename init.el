@@ -78,9 +78,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; mail config
-;; (load "~/.emacs.d/mail.el")
-
 ;; general lsp config
 (load "~/.emacs.d/lsp.el")
 
@@ -90,12 +87,16 @@
 ;; c config
 (load "~/.emacs.d/c.el")
 
+;; cpp config
+(load "~/.emacs.d/cpp.el")
+
 ;; groovy
 (load "~/.emacs.d/groovy.el")
 
 ;; other languages
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
+
 
 ;; sidebar
 (use-package dired-sidebar
@@ -123,7 +124,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(company-c-headers go-mode use-package)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
