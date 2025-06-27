@@ -5,7 +5,7 @@
 (add-hook 'go-mode-hook #'lsp-deferred)
 
 (unless (package-installed-p 'go-mode)
-  (package-refresh-contents)
+  (package-refresh-contents t)
   (package-install 'go-mode))
 
 (use-package go-mode)

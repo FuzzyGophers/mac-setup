@@ -1,5 +1,5 @@
 (unless (package-installed-p 'groovy-mode)
-  (package-refresh-contents)
+  (package-refresh-contents t)
   (package-install 'groovy-mode))
 
 (use-package groovy-mode)

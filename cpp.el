@@ -1,5 +1,5 @@
 (unless package-archive-contents
-  (package-refresh-contents))
+  (package-refresh-contents t))
 (dolist (pkg '(lsp-mode company flycheck projectile magit))
   (unless (package-installed-p pkg)
     (package-install pkg)))
@@ -17,7 +17,7 @@
 
 ;; CMake support
 (unless package-archive-contents
-  (package-refresh-contents))
+  (package-refresh-contents t))
 (unless (package-installed-p 'cmake-mode)
   (package-install 'cmake-mode))
 

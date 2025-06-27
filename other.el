@@ -2,7 +2,7 @@
 ;; https://github.com/emacsorphanage/terraform-mode
 
 (unless (package-installed-p 'terraform-mode)
-  (package-refresh-contents)
+  (package-refresh-contents t)
   (package-install 'terraform-mode))
 
 (use-package terraform-mode)
@@ -13,7 +13,7 @@
 ;; YAML
 
 (unless (package-installed-p 'yaml-mode)
-  (package-refresh-contents)
+  (package-refresh-contents t)
   (package-install 'yaml-mode))
 
 (use-package yaml-mode)
