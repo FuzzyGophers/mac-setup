@@ -5,7 +5,7 @@
     (package-install pkg)))
 
 (require 'lsp-mode)
-(setq lsp-clients-clangd-executable "/opt/homebrew/opt/llvm/bin/clangd")
+(setq lsp-clients-clangd-executable "/usr/bin/clangd")
 (add-hook 'c++-mode-hook 'lsp)
 (require 'company)
 (add-hook 'c++-mode-hook 'company-mode)
