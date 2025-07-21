@@ -113,6 +113,9 @@
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
 
+;; lua config
+(load "~/.emacs.d/lua.el")
+
 ;; sidebar
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
