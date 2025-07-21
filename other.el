@@ -1,21 +1,15 @@
+;;; other.el --- Configuration for other languages (Terraform, YAML)
+
 ;; Terraform
-;; https://github.com/emacsorphanage/terraform-mode
-
-(unless (package-installed-p 'terraform-mode)
-  (package-refresh-contents t)
-  (package-install 'terraform-mode))
-
-(use-package terraform-mode)
-
-(add-to-list 'auto-mode-alist '("\\.tf\\'" . terraform-mode))
-(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+(use-package terraform-mode
+  :ensure t
+  :mode "\\.tf\\'"
+  :hook (terraform-mode . terraform-format-on-save-mode))
 
 ;; YAML
+(use-package yaml-mode
+  :ensure t
+  :mode "\\.ya?ml\\'")
 
-(unless (package-installed-p 'yaml-mode)
-  (package-refresh-contents t)
-  (package-install 'yaml-mode))
-
-(use-package yaml-mode)
-
-(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-mode))
+(provide 'other)
+;;; other.el ends here

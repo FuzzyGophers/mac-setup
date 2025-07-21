@@ -1,11 +1,12 @@
-(unless (package-installed-p 'groovy-mode)
-  (package-refresh-contents t)
-  (package-install 'groovy-mode))
+;;; groovy.el --- Groovy language configuration
 
-(use-package groovy-mode)
+(use-package groovy-mode
+  :ensure t
+  :mode "\\.groovy\\'")
 
-(unless (package-installed-p 'jenkinsfile-mode)
-  (package-refresh-contents)
-  (package-install 'jenkinsfile-mode))
+(use-package jenkinsfile-mode
+  :ensure t
+  :mode "Jenkinsfile\\'")
 
-(use-package jenkinsfile-mode)
+(provide 'groovy)
+;;; groovy.el ends here

@@ -4,8 +4,18 @@
 	("elpa" . "https://elpa.gnu.org/packages/")
 	("gnu" . "https://elpa.gnu.org/packages/")))
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+;; Initialize package system
+(package-initialize)
+
+;; Load common utilities
+(load "~/.emacs.d/utils.el")
+
+;; Refresh package contents once at startup if needed
+(unless package-archive-contents
+  (package-refresh-contents t))
+
+;; Install and configure use-package
+(ensure-package-installed 'use-package)
 (require 'use-package)
 
 ;; mail stuff
@@ -77,6 +87,9 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; load utilities
+(load "~/.emacs.d/utils.el")
 
 ;; general lsp config
 (load "~/.emacs.d/lsp.el")

@@ -1,6 +1,9 @@
-;; company-c-headers
-(unless (package-installed-p 'company-c-headers)
-  (package-refresh-contents t)
-  (package-install 'company-c-headers))
+;;; c.el --- C language configuration
+
+(use-package company-c-headers
+  :ensure t)
 
 (setq c-default-style "linux")
+
+(provide 'c)
+;;; c.el ends here
