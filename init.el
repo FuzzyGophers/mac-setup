@@ -81,6 +81,9 @@
 ;; general lsp config
 (load "~/.emacs.d/lsp.el")
 
+;; markdown config
+(load "~/.emacs.d/markdown.el")
+
 ;; go config
 (load "~/.emacs.d/go.el")
 
@@ -96,7 +99,6 @@
 ;; other languages
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
-
 
 ;; sidebar
 (use-package dired-sidebar

@@ -28,3 +28,10 @@
                   :major-modes '(cmake-mode)
                   :server-id 'cmake-ls))
 (add-hook 'cmake-mode-hook #'lsp)
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (setq tab-width 4)))
+(use-package clang-format
+  :ensure t)
+(add-hook 'c++-mode-hook
+          (lambda () (add-hook 'before-save-hook 'clang-format-buffer nil 'local)))
