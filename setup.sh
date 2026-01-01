@@ -14,6 +14,7 @@
 #   --shell      Symlink ~/.bash_profile
 #   --fonts      Install Hack Nerd Font
 #   --dev        Install dev tools (languages, LSP servers, formatters)
+#   --claude     Install Claude Code CLI
 #   --help       Show this help message
 #
 
@@ -250,6 +251,25 @@ setup_dev() {
     fi
 }
 
+setup_claude() {
+    print_header "Setting up Claude Code..."
+    ensure_homebrew
+
+    # Ensure Node.js is available (required for npm)
+    brew_install "node"
+
+    if command -v npm &> /dev/null; then
+        if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+            print_success "Claude Code already installed"
+        else
+            echo "Installing Claude Code..."
+            npm install -g @anthropic-ai/claude-code || print_warning "Failed to install Claude Code"
+        fi
+    else
+        print_error "npm not available - cannot install Claude Code"
+    fi
+}
+
 show_help() {
     echo "Mac Setup - Install and configure macOS development environment"
     echo ""
@@ -266,6 +286,7 @@ show_help() {
     echo "  --shell      Symlink ~/.bash_profile"
     echo "  --fonts      Install Hack Nerd Font"
     echo "  --dev        Install dev tools (languages, LSP servers, formatters)"
+    echo "  --claude     Install Claude Code CLI"
     echo "  --help       Show this help message"
     echo ""
     echo "Examples:"
@@ -291,6 +312,7 @@ DO_SYSTEM=false
 DO_SHELL=false
 DO_FONTS=false
 DO_DEV=false
+DO_CLAUDE=false
 
 if [[ $# -eq 0 ]]; then
     DO_ALL=true
@@ -308,6 +330,7 @@ while [[ $# -gt 0 ]]; do
         --shell)     DO_SHELL=true ;;
         --fonts)     DO_FONTS=true ;;
         --dev)       DO_DEV=true ;;
+        --claude)    DO_CLAUDE=true ;;
         --help)      show_help; exit 0 ;;
         *)           print_error "Unknown option: $1"; show_help; exit 1 ;;
     esac
@@ -330,6 +353,7 @@ if $DO_ALL || $DO_ITERM; then setup_iterm; fi
 if $DO_ALL || $DO_RECTANGLE; then setup_rectangle; fi
 if $DO_ALL || $DO_SYSTEM; then setup_system; fi
 if $DO_ALL || $DO_SHELL; then setup_shell; fi
+if $DO_ALL || $DO_CLAUDE; then setup_claude; fi
 
 # Summary
 print_header "Setup complete!"
