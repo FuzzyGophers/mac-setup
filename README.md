@@ -5,7 +5,7 @@ Personal macOS development environment setup.
 ## Quick Start
 
 ```bash
-git clone git@github.com:YOUR_USERNAME/mac-setup.git ~/repos/mac-setup
+git clone https://github.com/FuzzyGophers/mac-setup.git ~/repos/mac-setup
 cd ~/repos/mac-setup
 ./setup.sh
 ```
