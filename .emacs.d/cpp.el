@@ -1,4 +1,4 @@
-;;; cpp.el --- C++ language configuration with C++17+ support
+;;; cpp.el --- C++ language configuration with C++17+ support -*- lexical-binding: t -*-
 
 (use-package company
   :ensure t

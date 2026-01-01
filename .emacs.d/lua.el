@@ -1,4 +1,4 @@
-;;; lua.el --- Lua language configuration with LSP support
+;;; lua.el --- Lua language configuration with LSP support -*- lexical-binding: t -*-
 
 ;; Core Lua mode
 (use-package lua-mode

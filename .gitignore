@@ -1,3 +1,18 @@
-*init.el*
+# Emacs generated files
+.emacs.d/elpa/
+.emacs.d/auto-save-list/
+.emacs.d/transient/
+.emacs.d/snippets/
+.emacs.d/init.el~
+.emacs.d/.#init.el
+.emacs.d/.lsp-session*
 .lsp-session*
-elpa/
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/eln-cache/
+*.elc
+
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/

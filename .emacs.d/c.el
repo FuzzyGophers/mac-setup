@@ -1,4 +1,4 @@
-;;; c.el --- C language configuration with Linux kernel support
+;;; c.el --- C language configuration with Linux kernel support -*- lexical-binding: t -*-
 
 (use-package company-c-headers
   :ensure t)

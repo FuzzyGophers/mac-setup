@@ -1,4 +1,4 @@
-;;; other.el --- Configuration for other languages (Terraform, YAML)
+;;; other.el --- Configuration for other languages (Terraform, YAML) -*- lexical-binding: t -*-
 
 ;; Terraform
 (use-package terraform-mode

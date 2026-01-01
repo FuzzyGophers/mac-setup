@@ -1,4 +1,4 @@
-;;; go.el --- Go language configuration with modern development features
+;;; go.el --- Go language configuration with modern development features -*- lexical-binding: t -*-
 
 ;; Add go binaries to PATH (improved path handling)
 (let ((go-bin-path (expand-file-name "~/go/bin")))

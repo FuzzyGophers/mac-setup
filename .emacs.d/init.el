@@ -1,3 +1,10 @@
+;;; init.el --- Main Emacs configuration -*- lexical-binding: t -*-
+
+;; Native compilation settings (Emacs 28+)
+(when (native-comp-available-p)
+  (setq native-comp-async-report-warnings-errors nil)
+  (setq native-comp-deferred-compilation t))
+
 (require 'package)
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
@@ -25,6 +32,18 @@
 ;; ensures that each package that is configured using ~use-package~ is installed
 (setq use-package-always-ensure t)
 
+;; Which-key for keybinding discovery
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :config
+  (which-key-mode)
+  (setq which-key-idle-delay 0.5))
+
+;; Diminish for cleaner modeline
+(use-package diminish
+  :ensure t)
+
 ;; visual stuff
 (setq-default
   ;; Prefers spaces over tabs, tabs are evil
@@ -39,9 +58,7 @@
   ;; user-mail-address "abcxyz@gmail.com"
   ;; The confirmation string when exiting Emacs
   confirm-kill-emacs 'y-or-n-p
-  fill-column 80
-  auto-fill-mode 1
-  )
+  fill-column 80)
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
@@ -88,9 +105,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; load utilities
-(load "~/.emacs.d/utils.el")
-
 ;; general lsp config
 (load "~/.emacs.d/lsp.el")
 
@@ -113,8 +127,23 @@
 ;; terraform and YAML
 (load "~/.emacs.d/other.el")
 
+;; protobuf support
+(load "~/.emacs.d/protobuf.el")
+
 ;; lua config
 (load "~/.emacs.d/lua.el")
+
+;; typescript/javascript config
+(load "~/.emacs.d/typescript.el")
+
+;; Tree-sitter (Emacs 29+)
+(load "~/.emacs.d/treesitter.el")
+
+;; python config
+(load "~/.emacs.d/python.el")
+
+;; rust config
+(load "~/.emacs.d/rust.el")
 
 ;; sidebar
 (use-package dired-sidebar
@@ -135,8 +164,10 @@
 
 
 ;; theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'dracula t)
+(use-package dracula-theme
+  :ensure t
+  :config
+  (load-theme 'dracula t))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

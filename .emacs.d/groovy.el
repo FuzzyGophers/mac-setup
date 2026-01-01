@@ -1,4 +1,4 @@
-;;; groovy.el --- Groovy language configuration
+;;; groovy.el --- Groovy language configuration -*- lexical-binding: t -*-
 
 (use-package groovy-mode
   :ensure t
