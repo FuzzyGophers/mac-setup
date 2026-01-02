@@ -229,7 +229,7 @@ setup_dev() {
     brew_install "luacheck"
 
     # Other tools
-    for pkg in pandoc delve; do
+    for pkg in pandoc delve tree; do
         brew_install "$pkg"
     done
 
