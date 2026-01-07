@@ -177,7 +177,7 @@ setup_system() {
     # Dock settings
     print_header "Configuring Dock..."
     defaults write com.apple.dock autohide -bool true
-    defaults write com.apple.dock tilesize -int 48
+    defaults write com.apple.dock tilesize -int 64
     defaults write com.apple.dock magnification -bool false
     defaults write com.apple.dock show-recents -bool false
     killall Dock 2>/dev/null || true
@@ -232,6 +232,9 @@ setup_dev() {
     for pkg in pandoc delve tree; do
         brew_install "$pkg"
     done
+
+    # Development casks
+    brew_cask_install "google-cloud-sdk"
 
     # NPM packages
     if command -v npm &> /dev/null; then

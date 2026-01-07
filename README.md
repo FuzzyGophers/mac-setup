@@ -29,6 +29,7 @@ cd ~/repos/mac-setup
 | `--shell` | Symlink ~/.bash_profile |
 | `--fonts` | Install Hack Nerd Font |
 | `--dev` | Install dev tools (languages, LSP servers, formatters) |
+| `--claude` | Install Claude Code CLI |
 | `--help` | Show help message |
 
 ### Examples
@@ -46,13 +47,15 @@ cd ~/repos/mac-setup
 - iTerm2 (with Dracula theme and font pre-configured)
 - Rectangle (window manager, with preferences pre-configured)
 - Hack Nerd Font
+- Google Cloud SDK
 
 ### Development Tools
 - **Emacs**: emacs-plus@29 with native compilation
 - **Languages**: Go, Rust, Node, Python, Lua, CMake
 - **LSP Servers**: gopls, pyright, rust-analyzer, clangd, lua-language-server, typescript-language-server
 - **Formatters**: prettier, black, ruff, gofumpt
-- **Tools**: pandoc, delve (Go debugger), gnupg, pinentry-mac
+- **Tools**: pandoc, delve (Go debugger), gnupg, pinentry-mac, tree
+- **CLI**: Claude Code (AI assistant)
 
 ### Configuration Applied
 - **macOS settings**: Dark mode, 24-hour time, screenshots to ~/Documents/screenshots
