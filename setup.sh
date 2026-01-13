@@ -227,9 +227,10 @@ setup_dev() {
 
     # Linters
     brew_install "luacheck"
+    brew_install "semgrep"
 
     # Other tools
-    for pkg in pandoc delve tree; do
+    for pkg in pandoc delve tree sops direnv; do
         brew_install "$pkg"
     done
 
